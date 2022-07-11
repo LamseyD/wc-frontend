@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Universal Watch List",
+    "version": "0.0.1",
+    "description": "List of things to watch across multiple services",
+    "icons": {
+        "48": "assets/icons/icon-60.png",
+        "96": "assets/icons/icon-60.png"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_icon": "assets/icons/icon-60.png",
+        "default_title": "WatchCo",
+        "default_popup": "popup/index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.mozilla.org/*"
+            ],
+            "js": [
+                "public/index.js"
+            ]
+        }
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "borderify@example.com"
+        }
+    }
+}
